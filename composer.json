@@ -1,0 +1,54 @@
+{
+    "name": "codemastersolutions/test-package",
+    "description": "",
+    "keywords": [
+        "codemastersolutions",
+        "test-package"
+    ],
+    "homepage": "https://github.com/codemastersolutions/test-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gilson Gabriel",
+            "email": "gilson@codemastersolucoes.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codemastersolutions\\TestPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codemastersolutions\\TestPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codemastersolutions\\TestPackage\\TestPackageServiceProvider"
+            ],
+            "aliases": {
+                "TestPackage": "Codemastersolutions\\TestPackage\\TestPackageFacade"
+            }
+        }
+    }
+}
